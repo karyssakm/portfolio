@@ -1,5 +1,15 @@
 {
   "dependencies": {
     "boxicons": "^2.1.4"
-  }
+  },
+  "name": "portfolio",
+  "description": "Creating my portfolio of my experience and projects as a software engineer and product manager",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
