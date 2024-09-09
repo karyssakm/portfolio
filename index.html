@@ -105,7 +105,7 @@
             <div class="container left-container">
                 <!-- ADD COMPANY LOGO -->
                 <img src="images/flywheeldigital2.png"> 
-                <div class="text-box">
+                <div class="text-box reveal">
                     <h2>Position</h2>
                     <h4>Company Name</h4>
                     <small>2018-2019</small>
@@ -117,7 +117,7 @@
             <div class="container right-container">
                 <!-- ADD COMPANY LOGO -->
                 <img src="images/izimedical-logo2.png" alt="">  
-                <div class="text-box">
+                <div class="text-box reveal">
                     <h2>Position</h2>
                     <h4>Company Name</h4>
                     <small>2018-2019</small>
@@ -129,7 +129,7 @@
             <div class="container left-container">
                 <!-- ADD COMPANY LOGO -->
                 <img src="images/towson.jpg" alt=""> 
-                <div class="text-box">
+                <div class="text-box reveal">
                     <h2>Position</h2>
                     <h4>Company Name</h4>
                     <small>2018-2019</small>
@@ -141,7 +141,7 @@
             <div class="container right-container">
                 <!-- ADD COMPANY LOGO -->
                 <img src="images/rowman-and-littlefield.jpg" alt=""> 
-                <div class="text-box">
+                <div class="text-box reveal">
                     <h2>Position</h2>
                     <h4>Company Name</h4>
                     <small>2018-2019</small>
@@ -153,7 +153,7 @@
             <div class="container left-container">
                 <!-- ADD COMPANY LOGO
                 <img src="" alt="">  -->
-                <div class="text-box">
+                <div class="text-box reveal">
                     <h2>Position</h2>
                     <h4>Company Name</h4>
                     <small>2018-2019</small>
@@ -304,6 +304,27 @@
 
 
     <script type="module" src="script.js"></script>
+
+    <script type="text/javascript">
+        window.addEventListener('scroll', reveal);
+
+        function reveal(){
+            var reveals = document.querySelectorAll('.reveal');
+
+            for(var i = 0; i < reveals.length; i++){
+                var windowheight = window.innerHeight;
+                var revealtop = reveals[i].getBoundingClientRect().top;
+                var revealpoint = 150;
+
+                if(revealtop < windowheight - revealpoint){
+                    reveals[i].classList.add('active'); 
+                }
+                else{
+                    reveals[i].classList.remove('active');
+                }
+            }
+        }
+    </script>
     
 </body>
 </html>
