@@ -14,7 +14,7 @@
     --second-color: #3a5a40;
   }
   html {
-    font-size: 60%;
+    font-size: 70%;
     overflow-x: hidden;
     scroll-behavior: smooth;
   }
@@ -157,6 +157,9 @@
   .btn-group{
     display: flex;
     gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
   }
   .btn{
     display: inline-block;
@@ -266,6 +269,90 @@
     font-size: 7rem;
     margin: 5rem 0;
   }
+
+  .timeline{
+    position: relative;
+    max-width: 1200px;
+    margin: 100px auto;
+  }
+  .container{
+    padding: 10px 50px;
+    position: relative;
+    width: 50%;
+    /* background-color: var(--second-bg-color); */
+    color: var(--text-color);
+    border-radius: 2px;
+  }
+  .text-box{
+    padding: 20px 30px;
+    background-color: var(--second-color);
+    position: relative;
+    border-radius: 6px;
+    font-size: 15px;
+  }
+  .left-container{
+    left: 0;
+  }
+  .right-container{
+    left: 50%;
+  }
+  .container img{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    right: -20px;
+    top: 32px;
+    z-index: 10;
+  }
+  .right-container img{
+    left: -20px;
+  }
+
+  .timeline::after{
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    background: #ffffff;
+    top: 0;
+    left: 50%;
+    margin-left: -3px;
+    z-index: 1;
+  }
+  .text-box h2{
+    font-weight: 600;
+  }
+  .text-box small{
+    display: inline-block;
+    margin-bottom: 15px;
+  }
+  .left-container-arrow{
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 28px;
+    z-index: 1;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid #3a5a40;
+    right: -15px;
+  }
+  .right-container-arrow{
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 28px;
+    z-index: 1;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid #3a5a40;
+    left: -15px;
+  }
+
+
+
+
   .career{
     background-color: var(--bg-color);
     color: black;
