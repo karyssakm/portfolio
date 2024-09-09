@@ -263,26 +263,53 @@
     background-color: var(--bg-color);
   }
 
-
   .heading{
     text-align: center;
     font-size: 7rem;
-    margin: 5rem 0;
+    margin: 5rem 0 7rem 0;
   }
-
   .timeline{
     position: relative;
     max-width: 1200px;
     margin: 100px auto;
   }
-  .container{
+  
+  /* .container{
     padding: 10px 50px;
     position: relative;
     width: 50%;
-    /* background-color: var(--second-bg-color); */
     color: var(--text-color);
     border-radius: 2px;
+    animation: movedown 1s linear forwards;
+    opacity: 0;
   }
+  @keyframes movedown {
+    0%{
+      opacity: 1;
+      transform: translateY(-30px);
+    }
+    100%{
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+
+  .container:nth-child(1){
+    animation-delay: 0s;
+  }
+  .container:nth-child(2){
+    animation-delay: 1s;
+  }
+  .container:nth-child(3){
+    animation-delay: 2s;
+  }
+  .container:nth-child(4){
+    animation-delay: 3s;
+  }
+  .container:nth-child(5){
+    animation-delay: 4s;
+  }
+  
   .text-box{
     padding: 20px 30px;
     background-color: var(--second-color);
@@ -292,9 +319,11 @@
   }
   .left-container{
     left: 0;
+    z-index: 1;
   }
   .right-container{
     left: 50%;
+    z-index: 1;
   }
   .container img{
     position: absolute;
@@ -303,7 +332,7 @@
     border-radius: 50%;
     right: -20px;
     top: 32px;
-    z-index: 10;
+    z-index: 2;
   }
   .right-container img{
     left: -20px;
@@ -314,14 +343,27 @@
     position: absolute;
     width: 6px;
     height: 100%;
-    background: #ffffff;
+    background: #1f201f;
     top: 0;
     left: 50%;
     margin-left: -3px;
-    z-index: 1;
+    z-index: 0;
+    animation:
+     moveline 6s linear forwards;
+  }
+  @keyframes moveline {
+    0%{
+      height: 0;
+    }
+    100%{
+      height: 100%;
+    }
   }
   .text-box h2{
     font-weight: 600;
+  }
+  .text-box h4{
+    font-weight: 400;
   }
   .text-box small{
     display: inline-block;
@@ -338,6 +380,37 @@
     border-left: 15px solid #3a5a40;
     right: -15px;
   }
+  @media screen and (max-width:1285px) {
+    .timeline{
+      margin: 50px auto;
+    }
+    .timeline::after{
+      left: 31px;
+    }
+    .container{
+      width: 100%;
+      padding-left: 80px;
+      padding-right: 25px;
+    }
+    .text-box{
+      font-size: 13px;
+    }
+    .text-box small{
+      margin-bottom: 10px;
+    }
+    .right-container{
+      left: 0;
+    }
+    .left-container img, .right-container img{
+      left: 10px;
+    }
+    .left-container-arrow, .right-container-arrow {
+      border-right: 15px solid #3a5a40;
+      border-left: 0;
+      left: -15px;
+    }
+    
+  }
   .right-container-arrow{
     height: 0;
     width: 0;
@@ -348,65 +421,264 @@
     border-bottom: 15px solid transparent;
     border-right: 15px solid #3a5a40;
     left: -15px;
-  }
+  } */
 
-
-
-
-  .career{
-    background-color: var(--bg-color);
-    color: black;
-  }
-  .career h2{
+  /* .container {
+    padding: 10px 50px;
+    position: relative;
+    width: 50%;
     color: var(--text-color);
+    border-radius: 2px;
+    opacity: 1; 
+    transform: none; 
+    transition: none; 
   }
-  .career-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    align-items: center;
-    gap: 2.5rem;
+  .left-container {
+    left: 0;
+    z-index: 1;
   }
-  .career-box{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--main-color);
-    height: 600px;
-    border-radius: 3rem;
-    cursor: pointer;
-    border: 5px solid transparent;
-    transition: 0.4s ease-in-out;
+  .right-container {
+    left: 50%;
+    z-index: 1;
   }
-  .career-box:hover{
-    background: var(--second-bg-color);
-    color: var(--main-color);
-    border: 5px solid var(--main-color);
-    transform: scale(1.03);
+  .text-box {
+    padding: 20px 30px;
+    background-color: var(--second-color);
+    position: relative;
+    border-radius: 6px;
+    font-size: 15px;
   }
-  .career-info{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    padding: 5rem;
+  .container img {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    right: -20px;
+    top: 32px;
+    z-index: 2;
   }
-  .career-info box-icon{
-    font-size: 15rem;
-    margin-top: 0;
-    margin-bottom: 14rem;
+  .right-container img {
+    left: -20px;
   }
-  .career-info h4{
-    font-size: 4rem;
-    margin-top: 2rem;
-    margin-bottom: 1.5rem;
-    font-weight: bold;
+
+  .timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    background: #1f201f;
+    top: 0;
+    left: 50%;
+    margin-left: -3px;
+    z-index: 0;
   }
-  .career-info p{
-    font-size: 1.4rem;
+  .left-container-arrow {
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 28px;
+    z-index: 1;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid #3a5a40;
+    right: -15px;
+  }
+  .right-container-arrow {
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 28px;
+    z-index: 1;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid #3a5a40;
+    left: -15px;
+  }
+  @media screen and (max-width:1285px) {
+    .timeline {
+      margin: 50px auto;
+    }
+    .timeline::after {
+      left: 31px;
+    }    
+    .container {
+      width: 100%;
+      padding-left: 80px;
+      padding-right: 25px;
+    }  
+    .text-box {
+      font-size: 13px;
+    }  
+    .text-box small {
+      margin-bottom: 10px;
+    }  
+    .right-container {
+      left: 0;
+    }  
+    .left-container img, .right-container img {
+      left: 10px;
+    }  
+    .left-container-arrow, .right-container-arrow {
+      border-right: 15px solid #3a5a40;
+      border-left: 0;
+      left: -15px;
+    }
+  }   */
+
+  .container {
+    padding: 10px 50px;
+    position: relative;
+    width: 50%;
+    color: var(--text-color);
+    border-radius: 2px;
+    animation: CSSscrollReveal 1s linear forwards;
+    opacity: 0;
+}
+
+@keyframes CSSscrollReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.text-box {
+    padding: 20px 30px;
+    background-color: var(--second-color);
+    position: relative;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.left-container {
+    left: 0;
+    z-index: 1;
+}
+
+.right-container {
+    left: 50%;
+    z-index: 1;
+}
+
+.container img {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    right: -20px;
+    top: 32px;
+    z-index: 2;
+}
+
+.right-container img {
+    left: -20px;
+}
+
+/* Timeline Line */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    background: #1f201f;
+    top: 0;
+    left: 50%;
+    margin-left: -3px;
+    z-index: 0;
+    animation: moveline 6s linear forwards;
+}
+
+@keyframes CSSscrollReveal {
+  0% {
+      opacity: 0;
+      transform: translateY(100px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0px);
+  }
+}
+
+.text-box h2 {
     font-weight: 600;
-    line-height: 1.8;
-  }
+}
+
+.text-box h4 {
+    font-weight: 400;
+}
+
+.text-box small {
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.left-container-arrow {
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 28px;
+    z-index: 1;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid #3a5a40;
+    right: -15px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1285px) {
+    .timeline {
+        margin: 50px auto;
+    }
+    
+    .timeline::after {
+        left: 31px;
+    }
+
+    .container {
+        width: 100%;
+        padding-left: 80px;
+        padding-right: 25px;
+    }
+
+    .text-box {
+        font-size: 13px;
+    }
+
+    .text-box small {
+        margin-bottom: 10px;
+    }
+
+    .right-container {
+        left: 0;
+    }
+
+    .left-container img, .right-container img {
+        left: 10px;
+    }
+
+    .left-container-arrow, .right-container-arrow {
+        border-right: 15px solid #3a5a40;
+        border-left: 0;
+        left: -15px;
+    }
+}
+
+.right-container-arrow {
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 28px;
+    z-index: 1;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid #3a5a40;
+    left: -15px;
+}
+
 
   .projects{
     background-color: var(--second-bg-color);
