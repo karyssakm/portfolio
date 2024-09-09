@@ -93,6 +93,7 @@
   }
 
   section{
+    width: 100%;
     min-height: 100vh;
     padding: 10rem 15%;
   }
@@ -427,7 +428,6 @@
         left: -15px;
     }
 }
-
 .right-container-arrow {
     height: 0;
     width: 0;
@@ -439,39 +439,6 @@
     border-right: 15px solid #3a5a40;
     left: -15px;
 }
-
-.career-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 5rem 15%; 
-  gap: 2rem;
-  min-height: 75vh;
-  background-color: var(--second-bg-color);
-}
-.career-page-title {
-  font-size: 6rem;
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-.career-page-title span {
-  background: linear-gradient(270deg, #84a98c 10%, #3a5a40 100%);
-  background-clip: text;
-  color: transparent;
-}
-
-.career-page-content {
-  font-size: 1.8rem;
-  line-height: 1.8;
-  color: var(--text-color);
-  margin-bottom: 2rem;
-  text-align: left;
-}
-
-
-
 
   .projects{
     background-color: var(--second-bg-color);
@@ -591,7 +558,7 @@
 }
 
 .footer{
-  background-color: var(--second-bg-color);
+  background-color: var(--bg-color);
   padding: 50px 0;
 }
 .footer .social-icons{
