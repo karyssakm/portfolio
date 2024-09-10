@@ -203,7 +203,7 @@
     background: var(--second-bg-color);
   }
   .about-image img{
-    width: 32vw;
+    width: 25vw;
     border-radius: 50%;
     box-shadow: 0 0 25px var(--main-color);
     transition: 0.4s ease-in-out;
@@ -395,6 +395,7 @@
   display: none;
   transition: all 1s ease-in-out;
   color: var(--text-color);
+  z-index: 5;
 }
 .read-more-text ol{
   padding-left: 20px;
@@ -564,23 +565,23 @@
   }
   .project-card p{
     font-size: 1.6rem;
+    text-align: left;
   }
+  
   .project-card .btn {
     font-size: 1.6rem;
     background-color: var(--main-color); /* Button background color */
-    color: black;
+    color: var(--text-color);
     padding: 1rem 2rem;
     border-radius: 2rem; /* Rounded button corners */
     transition: 0.3s ease;
+    
 }
-
 .project-card .btn:hover {
     background-color: black;
     color: var(--main-color);
-    transform: scale(1.05); /* Slight scale on hover */
+    transform: scale(1.05); 
 }
-
-
 .projects-page {
   display: flex;
   flex-direction: column;
@@ -610,6 +611,7 @@
   margin-bottom: 2rem;
   text-align: left;
 }
+
 
 .contact{
   background-color: var(--bg-color);
@@ -723,8 +725,9 @@
     text-align: center;
     margin: 2rem 0;
   }
-  .about image{
-    width: 52vw;
+  .about-image img{
+    width: 20vw;
+    border-radius: 50%;
   }
   .about-content p{
     margin-bottom: 1.5rem;
