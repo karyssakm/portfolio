@@ -59,6 +59,9 @@
     background-clip: text;
     color: transparent;
   }
+  .highlight{
+    color: var(--main-color);
+  }
   .navbar a{
     font-size: 1.8rem;
     color: var(--text-color);
@@ -249,7 +252,59 @@
     margin-bottom: 2rem;
     text-align: left;
 }
+.about-me-page h2{
+  padding: 15%;
+  text-wrap: nowrap;
+}
+.about-me-page h3{
+  font-size: 2rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  padding: 10%;
+}
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 60%;
+  }
 
+  .about-me-page {
+    padding: 3rem 5%;
+  }
+
+  .about-me-title {
+    font-size: 4rem;
+  }
+
+  .about-me-content {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .about-me-page h2 {
+    padding: 5%;
+  }
+
+  .about-me-page h3 {
+    font-size: 1.8rem;
+    padding: 5%;
+  }
+
+  .about-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--main-color);
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar a {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+  }
+}
   
 
   ::-webkit-scrollbar{
@@ -643,6 +698,9 @@
   }
   .about image{
     width: 52vw;
+  }
+  .about-content p{
+    margin-bottom: 1.5rem;
   }
   .contact form{
     flex-direction: column;
